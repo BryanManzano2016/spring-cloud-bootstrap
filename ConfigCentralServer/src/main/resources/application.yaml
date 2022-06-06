@@ -1,0 +1,38 @@
+server:
+  port: 10000
+spring:
+  application:
+    name: config-server
+  #profiles: #  active: native
+  security:
+    user:
+      name: root
+      password: config_SERVER_properties
+  cloud:
+    config:
+      server:
+        git:
+          clone-on-start: 'true'
+          uri: https://github.com/BryanManzano2016/ConfigServerCer
+encrypt:
+  keyStore:
+    alias: config-server-key
+    secret: my-k34-s3cr3t
+    location: classpath:/config-server.jks
+    password: my-s70r3-s3cr3t
+
+logging:
+  logback:
+    rollingpolicy:
+      max-file-size: 10MB
+      max-history: 21
+  file:
+    path: /home/bmanzano/Documents/projects/spring-cloud-bootstrap/ConfigCentralServer/logs
+    name: ${logging.file.path}/application.log
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:10001/eureka}
+  instance:
+    preferIpAddress: true

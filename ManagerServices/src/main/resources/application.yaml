@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: manager-services
+  profiles:
+    active: prod
+  config:
+    import: optional:configserver:http://root:config_SERVER_properties@localhost:10000
+
