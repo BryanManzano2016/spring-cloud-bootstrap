@@ -1,24 +1,13 @@
-## Spring Cloud Bootstrap
+# Spring Cloud Bootstrap
 
-This module contains articles about bootstrapping Spring Cloud applications
+- Spring cloud Config
+- Spring Cloud Netflix (Eureka server)
+- Spring Cloud Gateway
+- Spring Cloud OpenFeign
+- Spring Cloud Sleuth
 
-### Relevant Articles:
-
-- [Spring Cloud – Bootstrapping](http://www.baeldung.com/spring-cloud-bootstrapping)
-- [Spring Cloud – Securing Services](http://www.baeldung.com/spring-cloud-securing-services)
-- [Spring Cloud – Tracing Services with Zipkin](http://www.baeldung.com/tracing-services-with-zipkin)
-- [Spring Cloud Series – The Gateway Pattern](http://www.baeldung.com/spring-cloud-gateway-pattern)
-- [Spring Cloud – Adding Angular 4](http://www.baeldung.com/spring-cloud-angular)
-- [How to Share DTO Across Microservices](https://www.baeldung.com/java-microservices-share-dto)
-
-### Running the Project
-
-- First, you need a redis server running on the default port
-- To run the project:
-  - copy the appliction-config folder to c:\Users\{username}\ on Windows or /home/{username}/ on *nix. Then open a git bash terminal in application-config and run:
-    - git init
-    - git add .
-    - git commit -m "First commit"
-  - start the config server
-  - start the discovery server
-  - start all the other servers in any order (gateway, svc-book, svc-rating, zipkin)
+## Routes 
+- http://192.168.100.48:10010/actuator/gateway/routes/
+- gateway > http://localhost:10010/timestamp/now
+- manager-services > http://localhost:10015/now
+- micro-service > http://localhost:10015/timestamp/local

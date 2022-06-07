@@ -14,6 +14,11 @@ spring:
         git:
           clone-on-start: 'true'
           uri: https://github.com/BryanManzano2016/ConfigServerCer
+          # default-label: main
+          force-pull: true
+          deleteUntrackedBranches: true
+          refreshRate: 60
+          # try-master-branch: true
 encrypt:
   keyStore:
     alias: config-server-key
@@ -33,6 +38,6 @@ logging:
 eureka:
   client:
     serviceUrl:
-      defaultZone: ${EUREKA_URI:http://localhost:10001/eureka}
+      defaultZone: ${EUREKA_URI:http://localhost:10005/eureka}
   instance:
     preferIpAddress: true
